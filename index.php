@@ -10,22 +10,21 @@
 	<div class="container">
 		<div class="row">
 			<h1>Submit your pic</h1>
+			<h3><a href="showImg.php">See your pics!</a></h3>
 		</div>
 		
 		<div class="row">
 			<form action="showImg.php" method="post" enctype="multipart/form-data">
 				<div class="form-group">
-					<label id="legende">
-						<input id="legende" name="legend" class="form-control"/>
-					</label>
+						<input id="legende" name="legende" class="form-control" placeholder="Le nom de votre image..." />
 				</div>
 				<div class="form-group">
-					<label id="image">
-						<input type="file" name="image" id="image" class="form-control"/>
-					</label>
+					<label class="btn btn-default btn-file">
+  					  Browse <input type="file" name="image" style="display: none;">
+				</label>
 				</div>
 				<div class="form-group">
-					<button type="submit" value="submit" class="btn btn-default">Upload!</button>
+					<button type="submit" value="submit" class="btn btn-primary">Upload!</button>
 				</div>
 			</form>
 		</div>

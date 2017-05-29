@@ -1,9 +1,6 @@
 <?php
-	$label = $_POST['label'];
-	$imgTmp = $_FILES['image']['tmp_name'];
-	$imgName = $_FILES['image']['name'];
-
-	require "functions.php";
+//import des functions externes
+require "functions.php";
 ?>
 
 <!DOCTYPE html>
@@ -18,14 +15,17 @@
 	<div class="container">
 		<div class="row">
 			<h1>Here are your pics</h1>
+			<h3><a href="index.php">Add another!</a></h3>
 		</div>
 		
 		<div class="row">
 		<?php
-			print_r($img);
-			echo $imgTmp . "<br>";
-			echo $imgName;
-			uploadImg();
+			// function gérant l'import de fichiers img
+			?>
+			<p class="message"> <?php uploadImg(); ?> </p>
+			<?php
+			//function gérant l'affichage des images stockées
+			displayImg();
 		?>
 			
 		</div>
