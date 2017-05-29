@@ -22,6 +22,12 @@
 					<label class="btn btn-default btn-file">
   					  Browse <input type="file" name="image" style="display: none;">
 				</label>
+				<label class="radio">
+  					 <input type="radio" name="thumb" value="yes">Convert in Thumbnail
+				</label>
+				<label class="radio">
+				  	 <input type="radio" name="thumb" value="no">Conserve original size
+				</label>
 				</div>
 				<div class="form-group">
 					<button type="submit" value="submit" class="btn btn-primary">Upload!</button>
