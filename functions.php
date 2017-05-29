@@ -1,4 +1,7 @@
 <?php
+require "SimpleImage.php";				
+
+
 // function gérant l'import de fichiers img
 function uploadImg(){
 	// si une légende est renseignée, remplacer le nom de fichier par cette légende, sinon prendre le nom de fichier original
@@ -24,10 +27,24 @@ function uploadImg(){
 				$imgType = "." . substr($imgType, 6);
 			// vérification de la taille de fichier (moins de 10mb)
 			if ($imgSize < 10000000){
-				// Enregistrement de l'image dans le dir "files"
-				$uploadOK = move_uploaded_file($imgTmp, "files/". $imgName . $imgType);
-				if ($uploadOK){
-				$msg = "Votre fichier est bien uploadé <br>";
+				// Conversion en carré si l'option est cochée
+				if ($_POST['thumb'] == "yes"){
+					// Conversion en carré si l'option est cochée
+					$imgThumbName = "files/". $imgName . "_thumb" . $imgType;
+					// Appel à une lib POO externe
+					$objImg = new \claviska\SimpleImage();
+					$objImg->fromFile($imgTmp);
+					$objImg->thumbnail(150,150);
+					$objImg->toFile($imgThumbName);
+					$msg = "Votre thumbnail a bien été uploadé <br>";
+				}
+				else {
+				// Sinon, enregistrement de l'image originale
+				$imgFullName = "files/". $imgName . $imgType;
+				$uploadOK = move_uploaded_file($imgTmp, $imgFullName);
+					if ($uploadOK){
+					$msg = "Votre image a bien été uploadée <br>";
+					}
 				}
 			}
 			else {

@@ -22,7 +22,7 @@ require "functions.php";
 		<?php
 			// function gérant l'import de fichiers img
 			?>
-			<p class="message"> <?php uploadImg(); ?> </p>
+			<p class="alert alert-info"> <?php echo uploadImg(); ?> </p>
 			<?php
 			//function gérant l'affichage des images stockées
 			displayImg();
