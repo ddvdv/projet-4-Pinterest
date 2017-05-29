@@ -26,6 +26,7 @@ require "functions.php";
 			<?php
 			//function gérant l'affichage des images stockées
 			displayImg();
+			thumbNail();
 		?>
 			
 		</div>

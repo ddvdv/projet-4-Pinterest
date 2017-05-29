@@ -1,4 +1,13 @@
 <?php
+require "SimpleImage.php";				
+
+// Création d'un thumbnail en POO avec librairie externe
+function thumbNail(){
+	$objImg = new \claviska\SimpleImage();
+	$objImg->fromFile('canyon.jpg');
+	$objImg->toFile('cacanyonyon.jpg');
+}
+
 // function gérant l'import de fichiers img
 function uploadImg(){
 	// si une légende est renseignée, remplacer le nom de fichier par cette légende, sinon prendre le nom de fichier original
