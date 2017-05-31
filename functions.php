@@ -69,7 +69,7 @@ function displayImg(){
 	unset($imgArray[0], $imgArray[1], $imgArray[2]);
 	// génération de tag <img>
 	foreach ($imgArray as $imgFile) {
-		echo "<img class='col-xs-6 col-md-3 col-lg-2' src='files/" . $imgFile . "'>";
+		echo "<div class='grid-item'> <img src='files/" . $imgFile . "'/> </div>";
 	}
 }
 

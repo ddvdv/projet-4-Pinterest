@@ -25,11 +25,14 @@ form {
 p{
 	text-align: center !important;
 	line-height: 10px;
-	margin-bottom: 50px;
+	padding-bottom: 150px;
+	box-sizing: border-box;
+}
+
+.grid-item {
+	width: 100px;
 }
 
 img {
-	padding-top: 15px;
-	padding-bottom: 15px;
+	width: 100%;
 }
-
