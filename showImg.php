@@ -16,14 +16,11 @@ require "functions.php";
 		<div class="row">
 			<h1>Here are your pics</h1>
 			<h3><a href="index.php">Add another!</a></h3>
+			<p class="alert alert-info"> <?php echo uploadImg(); ?> </p>
 		</div>
 		
-		<div class="row">
+		<div class="grid" data-isotope='{ "itemSelector": ".grid-item", "layoutMode": "fitRows" }'>
 		<?php
-			// function gérant l'import de fichiers img
-			?>
-			<p class="alert alert-info"> <?php echo uploadImg(); ?> </p>
-			<?php
 			//function gérant l'affichage des images stockées
 			displayImg();
 		?>
@@ -31,4 +28,6 @@ require "functions.php";
 		</div>
 
 </body>
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+
 </html>
