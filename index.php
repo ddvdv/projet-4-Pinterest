@@ -11,22 +11,22 @@ require "functions.php";
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<link rel='stylesheet' href='./Remodal-master/dist/remodal-default-theme.css'>
 		<link rel='stylesheet' href='./Remodal-master/dist/remodal.css'>
+		<link href="https://fonts.googleapis.com/css?family=Bubbler+One" rel="stylesheet">
 		<link rel="stylesheet" href="perso.css">
 	</head>
 	<body>
 		<div class="remodal-bg container">
-			<h1>Imagibrary</h1>
+			<h1><a href='index.php'>Imagibrary</a></h1>
 
-			<div class="row">
-
-				<h3>Add another!</h3>
+			<div class="row uploadDiv">
+					<?php  echo uploader(); ?>
 					<form method="post" enctype="multipart/form-data" class="form-inline">
 						<div class="form-group">
-							<input id="legende" name="legende" class="form-control" placeholder="Image description" />
+							<label class="btn btn-default btn-file">
+								  New <input type="file" name="image" style="display: none;">
 						</div>
 						<div class="form-group">
-							<label class="btn btn-default btn-file">
-								  Browse <input type="file" name="image" style="display: none;">
+							<input id="legende" name="legende" class="form-control" placeholder="Describe your new image" />
 						</div>
 						<div class="form-group">
 							<button type="submit" value="submit" class="btn btn-primary">Upload!</button>
@@ -34,13 +34,9 @@ require "functions.php";
 					</form>
 			</div>
 	
-			<div class="row">
-					<?php  echo uploader(); ?>
-			</div>
 
 
 			<div class="row">
-				<h3>Collected so far</h3>
 				<div class="grid">
 					<?php displayImg(); ?>
 				</div>

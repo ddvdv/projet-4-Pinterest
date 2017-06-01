@@ -64,9 +64,9 @@ function uploader(){
 		}
 
 	} else {
-		$msg = "Veuillez sélectionner une image à uploader.";
+		$msg = "Browse your collection or select a new image to upload!";
 	}
-	$msg = '<p class="alert">' . $msg . '</p>';
+	$msg = '<p>' . $msg . '</p>';
 	return $msg;
 }
 

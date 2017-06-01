@@ -1,30 +1,74 @@
 * {
 	box-sizing: border-box;
+	font-family: 'Bubbler One', sans-serif;
 }
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+body {
+	background: linear-gradient(#D8C1FF, #A29ABF);
+	background-attachment: fixed;
+} 
 
 h1 {
 	text-align: center;
-	margin-bottom: 50px;
+	margin-bottom: 30px;
+	color: #363040;
+	font-family: 'Bubbler One', sans-serif;
+	font-size: 4em;
+	font-weight: bold;
 }
+
+a:link, a:visited, a:hover, a:active{
+    text-decoration: none;
+	color: #363040;
+}
+
+
 
 h3 {
 	text-align: center;
 	margin-bottom: 20px;
+	font-family: 'Bubbler One', sans-serif;
 }
 
 form {
 	text-align: center;
 }
 
+
 #legende {
 	text-align: center;
+	min-width: 100px;
 	width: 300px;
 	margin: auto;
 }
 
+.uploadDiv {
+	width: 70%;
+	margin: auto;
+	color: #363040;
+	background-color: #A290BF;
+	padding: 5px;
+	border-radius: 5px;
+	box-shadow: 5px;
+	margin-bottom: 20px;
+	font-size: 1.5em;
+}
+
+.uploadDiv p {
+	margin: 10px;
+	padding: 0px;
+	text-align: center;
+	line-height: 1;
+}
+
 
 p{
-	margin-top: 30px;
+	margin-top: 20px;
 	text-align: center !important;
 	line-height: 10px;
 	padding-bottom: 30px;
