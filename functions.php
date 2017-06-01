@@ -78,26 +78,46 @@ function displayImg(){
 	unset($imgArray[0], $imgArray[1], $imgArray[2]);
 	shuffle($imgArray);
 
-	foreach ($imgArray as $imgFile) {
-		//récupération de la taille
-		$imgArray = explode("_", $imgFile);
-		$format = $imgArray[1];
-		// génération de tag <img> selon la taille
+	function classGetter($imgFile){
+		$imgArr = explode("_", $imgFile);
+		$format = $imgArr[1];
 		if ($format == "small"){
-			echo "<div class='grid-item'> <img src='files/thumbnail/" . $imgFile . "'/> </div>";
+			$class = 'grid-item';
 		}
-		elseif ($format == "wide") {
-			echo "<div class='grid-item grid-item--width2'> <img src='files/thumbnail/" . $imgFile . "'/> </div>";		}
 		elseif ($format == "high"){
-			echo "<div class='grid-item grid-item--height2'> <img src='files/thumbnail/" . $imgFile . "'/> </div>";
+			$class = "grid-item grid-item--height2";
 		}
-		elseif ($format == "big"){
-			echo "<div class='grid-item grid-item--width2 grid-item--height2'> <img src='files/thumbnail/" . $imgFile . "'/> </div>";	
+		elseif ($format == "wide"){
+			$class = "grid-item grid-item--width2";
+		}
+		elseif ($format = "big"){
+			$class = 'grid-item grid-item--width2 grid-item--height2';
 		}
 		else {
-			echo "<div class='grid-item '> <img src='files/thumbnail/" . $imgFile . "'/> </div>";	
+			$class = 'grid-item';
 		}
+		return $class;
+	}
+
+	foreach ($imgArray as $imgFile) {
+		$div = "<div class='".classGetter($imgFile)."'> 
+						<a data-remodal-target='" . $imgFile . "' href='#''>
+							<img src='files/thumbnail/" . $imgFile . "'/>
+						</a>
+					</div>
+
+					<div class='remodal' data-remodal-id='" . $imgFile . "'>
+					  <button data-remodal-action='close' class='remodal-close'></button>
+						<img src='files/thumbnail/" . $imgFile . "'/> 
+					  <p>
+					    La description de l'image
+					  </p>
+					</div>";
+		echo $div;
+
+
 	}
 }
+
 
 ?>

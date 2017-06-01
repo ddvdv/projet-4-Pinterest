@@ -24,9 +24,10 @@ form {
 
 
 p{
+	margin-top: 30px;
 	text-align: center !important;
 	line-height: 10px;
-	padding-bottom: 150px;
+	padding-bottom: 30px;
 	box-sizing: border-box;
 }
 
