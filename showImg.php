@@ -1,6 +1,7 @@
 <?php
 //import des functions externes
 require "functions.php";
+
 ?>
 
 <!DOCTYPE html>
@@ -13,14 +14,24 @@ require "functions.php";
 </head>
 <body>
 	<div class="container">
-		<div class="row">
-			<h1>Here are your pics</h1>
-			<h3><a href="index.php">Add another!</a></h3>
-			<p class="alert alert-info"> <?php echo uploadImg(); ?> </p>
-		</div>
+			<h1>Imagibrary</h1>
+
+				<div class="row">
+					<h3>Add another!</h3>
+						<div>
+							<?php echo uploader(); ?>
+							<?php echo formToUpload();?>
+						</div>
+
+
+				</div>
 		
-		<div class="grid" data-isotope='{ "itemSelector": ".grid-item", "layoutMode": "fitRows" }'>
-		<?php
+				<div class="row">
+					<h3>Collected so far</h3>
+					<div class="grid">
+				</div>
+
+				<?php
 			//function gérant l'affichage des images stockées
 			displayImg();
 		?>
@@ -28,6 +39,12 @@ require "functions.php";
 		</div>
 
 </body>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
 <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+<script src="script.js">
+</script>
 
 </html>

@@ -5,7 +5,7 @@ var main = function() {
 	var options = {
 	  itemSelector: '.grid-item',
 	  masonry: {
-	    columnWidth: 200,
+	    columnWidth: 150,
 	    fitWidth: true	
 	  }
 	};
