@@ -4,7 +4,7 @@ require "SimpleImage.php";
 // function gérant l'import de fichiers img
 function uploader(){
 	// si un fichier est uploadé
-	if (($_FILES['image']['type']) != ""){
+	if (isset($_FILES['image']['type'])){
 
 		// Récupération de l'extension de l'image
 		// définit des variables moins verbeuses
